@@ -50,7 +50,6 @@ app.get("/blogs/:id" , function(req,res){
     blog.findById(req.params.id , function(err,maal){
         if(err) console.log(err) ;
         else {
-            // console.log(maal) ;
             res.render("show.ejs" , {readmore : maal}) ;
         }
     }) ;
@@ -66,7 +65,6 @@ app.get("/blogs/:id/edit" , function(req,res){
 }) ;
 
 app.put("/blogs/:id/edit" , function(req,res){
-    // console.log(req.body) ;
     req.body.body = req.sanitize(req.body.body) ;
     blog.findByIdAndUpdate(req.params.id , req.body , function(err,maal){
         if(err) console.log(err) ;
