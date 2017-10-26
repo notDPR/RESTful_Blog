@@ -33,7 +33,7 @@ app.get("/blogs" , function(req,res){
         else res.render("index.ejs",{blogs : maal}) ;
     }) ;
 }) ;
-
+// NEW ROUTE
 app.get("/blogs/new" , function(req,res){
     res.render("new.ejs") ;
 }) ;
