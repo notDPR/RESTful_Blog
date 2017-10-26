@@ -1,0 +1,37 @@
+<% include partials/header.ejs %>
+<!--=======================================================================-->
+
+<div class="ui container main text">
+    
+    <div class="ui huge header" style="text-align:center;">Restful Blog App</div>
+          <div class="ui top attached segment">
+            <div class="ui divided items">
+    <%for(var i=0;i<blogs.length;i++){%>
+      
+                <div class="ui item">
+                      <div class="ui medium image">
+                            <img src=<%=blogs[i].image%> class="ui image rounded">
+                      </div>
+                      <div class="ui content">
+                            <div class="ui header">
+                                  <a class="ui header" href="/blogs/<%=blogs[i]._id %>"><%=blogs[i].title%></a>
+                            </div>
+                            <div class="ui meta"><div class="date"><%=blogs[i].date.toDateString()%></div></div>
+                            <div class="description">
+                                  <p><%-blogs[i].body.substring(0,100)%> .... </p>
+                            </div>
+                            <div class="extra">
+                                  
+                                  <a class="ui floated inverted violet small button " href="/blogs/<%=blogs[i]._id %>"><i class="ui leanpub icon"></i>  Read More</a>
+                            </div>
+                      </div>
+                </div> 
+                       <!--<div class="ui horizontal divider"></div>-->
+                <% } %>
+            </div>
+          </div> 
+
+</div>
+
+<!--=======================================================================-->
+<% include partials/footer.ejs %>

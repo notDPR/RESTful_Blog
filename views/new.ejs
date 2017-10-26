@@ -1,0 +1,30 @@
+<% include partials/header.ejs %>
+<!--=======================================================================-->
+
+<div class="ui main text container segment">
+    <div class="ui huge header" style="text-align:center;">New Blog</div>
+    <form class="ui form" action="/blogs" method="post">
+       
+       <div class="field">
+         <label>Blog Title</label>
+        <input type="text" name="title" placeholder="Blog Title">
+       </div>
+       <div class="field">
+         <label>Image URL</label>
+         <input type="text" name="image" placeholder="Image">
+       </div>
+       <div class="field">
+        <label>Write your Blog</label>
+        <!--<input type="text" name="body" placeholder="Write your blog ....">-->
+        <textarea name="body"></textarea>
+       </div>
+       <div class="field" style="text-align:center;">
+           <button type="submit" class="ui button big">Submit</button>
+       </div>
+    </form>
+</div>
+
+
+
+<!--=======================================================================-->
+<% include partials/footer.ejs %>
