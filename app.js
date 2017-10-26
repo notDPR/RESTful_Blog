@@ -54,7 +54,7 @@ app.get("/blogs/:id" , function(req,res){
         }
     }) ;
 }) ;
-
+// EDIT ROUTES
 app.get("/blogs/:id/edit" , function(req,res){
     blog.findById(req.params.id , function(err,maal){
         if(err) console.log(err) ;
@@ -63,7 +63,6 @@ app.get("/blogs/:id/edit" , function(req,res){
         }
     }) ;
 }) ;
-
 app.put("/blogs/:id/edit" , function(req,res){
     req.body.body = req.sanitize(req.body.body) ;
     blog.findByIdAndUpdate(req.params.id , req.body , function(err,maal){
@@ -73,6 +72,7 @@ app.put("/blogs/:id/edit" , function(req,res){
     }) ;
 }) ;
 
+// DELETE ROUTE
 app.delete("/blogs/:id" , function(req,res){
     blog.findByIdAndRemove(req.params.id , function(err){    // No maal here as there is nothing 
         if(err) console.log(err) ;
