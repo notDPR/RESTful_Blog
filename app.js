@@ -13,7 +13,13 @@ app.use(bodyparser.urlencoded({extended :true})) ;
 
 app.use(sanitizer()) ;
 var mongoose = require("mongoose") ;
-mongoose.connect("mongodb://localhost/restful_blog") ;
+
+mongodb://localhost/restful_blog
+var url = mongoose.connect(process.env.DATABASEURL) || "mongodb://localhost/restful_blog" ;
+// for safety purposes
+
+mongoose.connect(process.env.url);
+
 
 var blogSchema = new mongoose.Schema({
     title: String,
